@@ -1,0 +1,90 @@
+<h3>Bej ndryshime</h3>
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+        <style>
+                form {margin: 0px 225px 0px 225px;}
+    
+                </style>
+</head>
+<form method="POST" action ="/todos/update/<%=doc._id%>">
+    <div>
+            <label>Nr.rendor i prokurorimit:    </label>
+            <input type="number" min="1" name="inputkey"  value=<%=doc.inputkey%>>
+                <%= doc.inputkey%>
+        </input>
+        </div>
+    </div>
+    <div>
+            <label>Lloji i prokurorimit:    </label>
+            <input name="inputvalue" value=<%=doc.inputvalue%>>
+                <%= doc.inputvalue%>
+        </input>
+        </div>
+        <div>
+                <label>Aktiviteti i prokurorimit:    </label>
+                <input name="aktiv" value=<%=doc.aktiv%>>
+                    <%= doc.aktiv%>
+            </input>
+            </div>
+    <div>
+            <label>Data e inicimit:    </label>
+            <input type="date" min="2000-01-02" name="init" value=<%=doc.init%>>
+                <%= doc.init%>
+        </input>
+        </div>
+        <div>
+            <label>Data e publikimit:    </label>
+            <input type="date" min="2000-01-02" name="public" value=<%=doc.public%>>
+                <%= doc.public%>
+        </input>
+        </div>
+        <div>
+            <label>Data e nenshkrimit te kontrates:    </label>
+            <input type="date" min="2000-01-02" name="contr" value=<%=doc.contr%>>
+                <%= doc.contr%>
+        </input>
+        </div>
+        <div>
+            <label>Afatet per implementimin:    </label>
+            <input type="date" min="2000-01-02" name="impl" value=<%=doc.impl%>>
+                <%= doc.impl%>
+        </input>
+        </div>
+        <div>
+            <label>Afatet per implementimin:    </label>
+            <input type="date" min="2000-01-02" name="implo" value=<%=doc.implo%>>
+                <%= doc.implo%>
+        </input>
+        </div>
+        <div>
+            <label>Data e permbylljes se kontrates:    </label>
+            <input type="date" min="2000-01-02" name="perm" value=<%=doc.perm%>>
+                <%= doc.perm%>
+        </input>
+        </div>
+        <div>
+            <label>Cmimi i kontrates:    </label>
+            <input type="number" min="1" name="cmimik" value=<%=doc.cmimik%>>
+                <%= doc.cmimik%>
+        </input>
+        </div>      
+        <div>
+                <label>Cmimi total:    </label>
+                <input type="number" min="1" name="cmimit" value=<%=doc.cmimit%>>
+                    <%= doc.cmimit%>
+            </input>
+            </div>     
+            <div>
+                    <label>Emri i te cilit eshte dhene kontrrata: <space></label>
+                    <input name="emri" value=<%=doc.emri%>>
+                        <%= doc.emri%>
+                </input>
+                </div>       
+    <button type="submit">Save</button>
+    
+</form>

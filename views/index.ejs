@@ -1,0 +1,104 @@
+<html lang="en">
+  <head>
+        <form method="POST" action ="todos/add">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <style>
+            form {margin: 0px 225px 0px 225px;}
+
+            </style>
+  </head>
+  <body>
+ 
+  <div class="container">
+    <h1 align="center">Shto kontraten e re</h1>
+    <h4>Prokurorimi:</h4>
+    <form>
+        <div class="form-group">
+            <div class="col-md-10">
+                <div class="form-group row">
+                    <label for="inputKey" class="col-md-1.3 control-label">Nr.rendor i prokurorimit</label>
+                    <div class="col-md-3">
+                        <input type="number" min="1" class="form-control" name="inputkey" placeholder="Nr.rendor i prokurorimit">
+                    </div>
+                    <label for="inputValue" class="col-md-1.3 control-label">Lloji i prokurorimit</label>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" name="inputvalue" placeholder="Lloji i prokurorimit">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                    <label for="aktiv">Aktiviteti i prokurorimit</label>
+                    <input type="text" class="form-control" name="aktiv" placeholder="Aktiviteti i prokurorimit">
+                  </div>
+            <h4>Datat:</h4>
+            <div class="form-group">
+                    <div class="col-md-10">
+                        <div class="form-group row">
+                            <label for="inputKey" class="col-md-1.3 control-label">Data e inicimit</label>
+                            <div class="col-md-3">
+                                <input type="date" min="2000-01-02" class="form-control" name="init" >
+                            </div>
+                            <label for="inputValue" class="col-md-1.3 control-label">Data e publikimit</label>
+                            <div class="col-md-3">
+                                    <input type="date" min="2000-01-02" class="form-control" name="public" >
+                            </div>
+                        </div>
+                    </div>
+            <div class="form-group">
+                            <label for="contr">Data e nenshkrimit te kontrates</label>
+                            <input type="date" min="2000-01-02" class="form-control" name="contr" placeholder="2000-01-02">
+                          </div>
+            <div class="form-group">
+                    <div class="col-md-10">
+                        <div class="form-group row">
+                            <label for="inputKey" class="col-md-1.3 control-label">Afatet per implementimin</label>
+                            <div class="col-md-3">
+                            <input type="date" min="2000-01-02" class="form-control" name="impl" placeholder="2000-01-02">
+                            </div>
+                            <div class="col-md-3">
+                            <input type="date" min="2000-01-02" class="form-control" name="implo" placeholder="2000-01-02">
+                            </div>
+                                </div>
+                    </div>
+                                <div class="form-group">
+                                        <label for="perm">Data e permbylljes se kontrates(data e pranimit te perkohshem)</label>
+                                        <input type="date" min="2000-01-02" class="form-control" name="perm" placeholder="2000-01-02">
+                                      </div>
+            <h4>Cmimet dhe te dhenat tjera:</h4>
+    <div class="form-group">
+      <div class="col-md-10">
+          <div class="form-group row">
+              <label for="inputKey" class="col-md-1.3 control-label">Cmimi i kontrates</label>
+              <div class="col-md-3">
+              <input type="number" min="1" class="form-control" name="cmimik" placeholder="Cmimi i kontrates">
+              </div>
+              <label for="inputValue" class="col-md-1.3 control-label">Cmimi total</label>
+              <div class="col-md-3">
+              <input type="number" min="1" class="form-control" name="cmimit" placeholder="Cmimi total i paguar ">
+              </div>
+          </div>
+      </div>
+      <div class="form-group">
+            <label for="perm">Emri i te cilit eshte dhene kontrrata</label>
+            <input type="text" class="form-control" name="emri" placeholder="Emri">
+          </div>
+                                    
+    </form>
+ <button type="submit" class="btn btn-primary btn-lg">Dergo</button>
+ <button type="reset" class="btn btn-primary btn-lg" value="Reset">Fshij</button>
+<hr />
+<ul>
+<% for(let todo of docs){%>
+<li>
+     nr i prokurorimit:<%=todo.inputkey%>
+    <a href="/todos/<%=todo._id %>">Show</a>
+    <a href="/todos/edit/<%=todo._id %>">Edit</a>
+    <a href="/todos/delete/<%=todo._id %>">Delete</a>
+</li>
+<%}%>
+</ul>
